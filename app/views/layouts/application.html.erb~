@@ -8,7 +8,7 @@
 </head>
 <body>
   <h1>Andrew's bookmarks</h1>
-  
+  <%= link_to "home", :action => root %>
 <%= yield %>
 
 </body>
