@@ -26,7 +26,7 @@
         <%= category.name %>
         <ul>
           <% category.links.each do |link| %>
-            <li><a href="http://<%= link.url %>" target="_blank" ><%= link.title %></li>
+            <li><a href="<%= link.url %>" ><%= link.title %></li>
             <% end %>
           </ul>
         </span>
