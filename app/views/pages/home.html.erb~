@@ -1,0 +1,3 @@
+<%= link_to 'categories', categories_path %>
+
+<%= link_to 'links', lins_path %>
