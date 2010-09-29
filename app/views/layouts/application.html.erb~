@@ -8,6 +8,7 @@
 </head>
 <body>
   <h1>Andrew's bookmarks</h1>
+  
 <%= yield %>
 
 </body>
