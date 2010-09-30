@@ -14,16 +14,19 @@
 
     </div>
     <div id="left" style="float: left;">
-      <% @categories.each do |category| %> 
-        <span id="category">
 
-          <%= category.name %>
-          <ul>
-            <% category.links.each do |link| %>
-              <li><a href="<%= link.url %>" ><%= link.title %></li>
-              <% end %>
-            </ul>
-          </span>
-        <% end %>
+      <% @categories.each do |category| %>
+
+        <h2  class="alt">
+   
+            <%= category.name %>
+            </h2>
+            <ul>
+              <% category.links.sort_by{|c| c.position}.each do |link| %>
+                <li><a href="<%= link.url %>" ><%= link.title %></li>
+                <% end %>
+              </ul>
+            </span>
+          <% end %>
+        </div>
       </div>
-    </div>
