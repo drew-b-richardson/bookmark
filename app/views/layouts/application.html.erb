@@ -17,9 +17,8 @@
   </head>
   <body>
    <div class="container">
-      <header>
-        <%= image_tag("logo.jpg", :alt => "BookMark Application", :class => "round") %>
-        <nav class="round">
+      <header class="span-21 last">
+        <nav class="">
           <ul>
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Category", categories_path %></li>
@@ -27,7 +26,7 @@
           </ul>
         </nav>
       </header>
-      <section class="round">
+      <section class="round span-21 last">
         <%= yield %>
       </section>
     </div>

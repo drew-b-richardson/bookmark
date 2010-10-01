@@ -1,5 +1,4 @@
 .container {
-  width: 710px;
 }
 
 body {
@@ -16,7 +15,6 @@ header img {
 }
 
 section {
-  margin-top: 1em;
   font-size: 120%;
   padding: 20px;
   background: #fff;
@@ -80,18 +78,6 @@ nav ul li a:hover {
 
 /* Sign up button */
 
-a.signup_button {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  text-align: center;
-  width: 190px;
-  color: #fff;
-  background: #006400;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 20px;
-}
 
 /* Round corners */
 
