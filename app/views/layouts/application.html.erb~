@@ -17,8 +17,8 @@
   </head>
   <body>
    <div class="container">
-      <header class="span-21 last">
-        <nav class="round">
+      <header class="span-24 last">
+        <nav class="">
           <ul>
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Category", categories_path %></li>
