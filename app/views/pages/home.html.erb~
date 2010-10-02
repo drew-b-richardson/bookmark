@@ -2,7 +2,7 @@
   <%= image_tag('logo.jpg', :alt => 'logo') %>
 </div>
 
-<div id="search"  class="span-17 last">
+<div id="search"  class="span-16 last">
   <h1 id="title" class="alt" >BookMark</h1>
   <form method="get" action="http://www.google.com/search" target="_blank">
     <input type="text" name="q" size="50" maxlength="255" value="" />
@@ -12,13 +12,9 @@
 
 <hr />
 
-<div id="main_content" style="span-24 last">
-
-
-  <% @categories.each do |category| %>
-
+<div id="left_content" class="span-9 colborder">
+  <% @left.each do |category| %>
     <h2  class="alt">
-
       <%= category.name %>
     </h2>
     <ul>
@@ -26,9 +22,18 @@
         <li><a href="<%= link.url %>" ><%= link.title %></a></li>
       <% end %>
     </ul>
-<<<<<<< HEAD
-=======
-  </span>
->>>>>>> layout
-<% end %>
+  <% end %>
     </div>
+
+    <div id="right_content" class="span-9 last">
+      <% @right.each do |category| %>
+        <h2  class="alt">
+          <%= category.name %>
+        </h2>
+        <ul>
+          <% category.links.sort_by{|c| c.position}.each do |link| %>
+            <li><a href="<%= link.url %>" ><%= link.title %></a></li>
+          <% end %>
+        </ul>
+    <% end %>
+  </div>

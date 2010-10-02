@@ -17,7 +17,7 @@
   </head>
   <body>
    <div class="container">
-      <header class="span-24 last">
+      <header class="span-21 last">
         <nav class="">
           <ul>
             <li><%= link_to "Home", root_path %></li>
@@ -26,10 +26,11 @@
           </ul>
         </nav>
       </header>
-      <section class="round">
-        <%= yield %>
+      <section class="round span-21 last">
         
+        <%= yield %>
       </section>
+        
     </div>
 
   </body>
