@@ -1,23 +1,21 @@
-<div id="logo"  class="span-7">
-  <%= image_tag("logo.jpg", :alt => "logo") %>
+<div id="logo"  class="span-4">
+  <%= image_tag('logo.jpg', :alt => 'logo') %>
 </div>
-<div id="search"  class="span-14 last">
 
+<div id="search"  class="span-19 last">
+<h1 id="title" class="alt" >BookMark</h1>
   <form method="get" action="http://www.google.com/search" target="_blank">
 
-    <table border="0" cellpadding="0">
-      <tr><td>
-          <input type="text"   name="q" size="50`"
+          <input type="text"   name="q" size="50"
           maxlength="255" value="" />
-          <input type="submit" value="Google Search" /></td></tr>
-      <table>
+          <input type="submit" value="Google Search" />
 
       </form>
 
     </div>
     <hr />
 
-    <div id="left" style="span-21 last">
+    <div id="left" style="span-24 last">
 
 
       <% @categories.each do |category| %>
@@ -28,10 +26,9 @@
         </h2>
         <ul>
           <% category.links.sort_by{|c| c.position}.each do |link| %>
-            <li><a href="<%= link.url %>" ><%= link.title %></li>
+            <li><a href="<%= link.url %>" ><%= link.title %></a></li>
             <% end %>
           </ul>
         </span>
       <% end %>
     </div>
-  </div>

@@ -9,20 +9,12 @@ header {
   padding-top: 20px;
 }
 
-header img {
-  padding: 1em;
-  background: #fff;
-}
 
 section {
-  font-size: 120%;
-  padding: 20px;
   background: #fff;
+  padding: 20px;
 }
 
-section h1 {
-  font-size: 200%;
-}
 
 /* Links */
 
@@ -51,6 +43,7 @@ nav {
   padding: 0 0.7em;
   white-space: nowrap;
 }
+
 
 nav ul {
   margin: 0;
