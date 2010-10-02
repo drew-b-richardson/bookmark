@@ -26,8 +26,9 @@
           </ul>
         </nav>
       </header>
-      <section class="round span-21 last">
+      <section class="round">
         <%= yield %>
+        
       </section>
     </div>
 

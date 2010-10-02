@@ -26,5 +26,9 @@
         <li><a href="<%= link.url %>" ><%= link.title %></a></li>
       <% end %>
     </ul>
+<<<<<<< HEAD
+=======
+  </span>
+>>>>>>> layout
 <% end %>
     </div>
