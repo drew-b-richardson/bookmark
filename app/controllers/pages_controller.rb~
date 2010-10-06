@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-   categories = Category.find(:all, :order => "position DESC") 
+   categories = Category.find(:all, :order => "position ASC") 
    i = 0
    @left = []
    @right = []
