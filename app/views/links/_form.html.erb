@@ -24,8 +24,14 @@
     <%= f.text_field :position %>
   </div>
   <div class="field">
+    
     <%= f.label :category_id %><br />
-    <%= f.text_field :category_id %>
+    <select name="link[<%= :category_id %>]" >
+      <% @categories.each do |category| %>
+        <option value="<%= category.id %>"><%= category.name %></option>
+      <% end %>
+    </select>
+    
   </div>
   <div class="actions">
     <%= f.submit %>

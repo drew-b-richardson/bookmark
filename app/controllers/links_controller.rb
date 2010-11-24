@@ -26,6 +26,7 @@ class LinksController < ApplicationController
   def new
     @link = Link.new
 
+    @categories = Category.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @link }
@@ -35,13 +36,14 @@ class LinksController < ApplicationController
   # GET /links/1/edit
   def edit
     @link = Link.find(params[:id])
+    @categories = Category.find(:all)
   end
 
   # POST /links
   # POST /links.xml
   def create
     @link = Link.new(params[:link])
-
+    
     respond_to do |format|
       if @link.save
         format.html { redirect_to(@link, :notice => 'Link was successfully created.') }
@@ -57,7 +59,6 @@ class LinksController < ApplicationController
   # PUT /links/1.xml
   def update
     @link = Link.find(params[:id])
-
     respond_to do |format|
       if @link.update_attributes(params[:link])
         format.html { redirect_to(@link, :notice => 'Link was successfully updated.') }
