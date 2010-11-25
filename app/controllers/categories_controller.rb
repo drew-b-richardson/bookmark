@@ -2,8 +2,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.xml
   def index
-    @categories = Category.all
-
+    @categories =  Category.find(:all, :order => "position ASC")
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @categories }
@@ -80,4 +79,32 @@ class CategoriesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+
+  def move_up
+
+    @category = Category.find(params[:id])
+
+    #get all categories and determine index of current
+    categories = Category.find(:all,  :order => "position ASC")
+    index = categories.index(@category)
+
+   #delete current, and then reinsert one above current (unless current is 0)
+    categories.delete_at(index)
+    if index != 0
+      index = index - 1
+    end 
+    categories.insert(index, @category)
+    
+    #reset position of all based on array index
+    i = 0
+    categories.each do |category|
+      category.position = i
+      category.save
+      i += 1
+    end
+
+    redirect_to :action => :index
+  end
+
 end
