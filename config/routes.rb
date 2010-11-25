@@ -9,6 +9,7 @@ Bookmark::Application.routes.draw do
 
   # Sample of regular route:
      match 'cat_up/:id' => 'categories#move_up'
+     match 'link_up/:cat_id/:link_id' => 'links#move_up'
   # Keep in mind you can assign values other than :controller and :action
   
   # Sample of named route:
