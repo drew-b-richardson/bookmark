@@ -90,21 +90,16 @@ class LinksController < ApplicationController
     @category = Category.find(params[:cat_id])
 
     #get all links for chosen category and determine index of current
-    links = Link.where("category_id = #{@category.id}", :order => "position ASC")
-    logger.info('number of links = ' + links.length.to_s)
+    links = Link.where("category_id = #{@category.id}").order("position ASC").find(:all)
     index = links.index(@link)
-    logger.info('index =' + index.to_s)
 
     #delete current, and then reinsert one above current (unless current is 0)
     links.delete_at(index)
-    logger.info('after delete numb links = '+ links.length.to_s)
     if index != 0
       index = index - 1
     end 
-    logger.info('links class = ' + links.class.to_s)
-    links.to_a.insert(index, @link)
+    links.insert(index, @link)
 
-    logger.info('after add numb links = '+ links.length.to_s)
     #reset position of all based on array index
     i = 0
     links.each do |link|
